@@ -3,17 +3,17 @@
 #include <unistd.h>
 
 int main(){
-    int id;
+    pid_t id;
 
     id=fork();
-    printf("ID is %d",&id);
+    printf("ID is %d\n",&id);
 
     if(id==0){
-        printf("In child process");
+        printf("In child process\n");
     }
     else
     {
-        printf("In parent process");
+        printf("In parent process\n");
     }
 
     return 0;
