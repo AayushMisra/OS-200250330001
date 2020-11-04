@@ -11,7 +11,7 @@ int main(){
     pthread_t tid;
     pthread_create(&tid,NULL,thread,NULL);
 
-    sleep(1);
+    pthread_join(tid,NULL);
 
     return 0;
 }
