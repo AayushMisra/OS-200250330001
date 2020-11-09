@@ -7,8 +7,7 @@ int count=0;
 sem_t count_sem;
 
 void * increment(void *arg){
-    sleep(1);
-    for(int i=1;i<10;i++){
+    while(1){
         sem_wait(&count_sem);
 
         count++;
@@ -19,14 +18,13 @@ void * increment(void *arg){
 }
 
 void * decrement(void *arg){
-    for(int i=1;i<10;i++){
+    while(1){
         sem_wait(&count_sem);
 
         count--;
         printf("Dec thread: %d\n",count);
 
         sem_post(&count_sem);
-        sleep(1);
     }
 }
 
